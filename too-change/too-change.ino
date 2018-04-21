@@ -54,7 +54,7 @@ void toggleInterrupts() {
 }
 
 void repeatStep() {
-  digitalWrite(pinStepSpindle, HIGH)
+  digitalWrite(pinStepSpindle, HIGH);
   delayMicroseconds(stepOnTime);
   digitalWrite(pinStepSpindle, LOW); 
 }

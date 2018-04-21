@@ -48,6 +48,28 @@ void setup() {
 
 void loop() {
   
+  switch (sequenceCounter) {
+    case 0:
+      // Startup sequence
+      
+      break;
+    case 1:
+      
+      break;
+    default:
+      Serial.print("Sequence number: ");
+      Serial.println(sequenceCounter);
+      break;
+  }
+
+  while (true) {
+    if (digitalRead(pinMachWait) == HIGH && pinMachWaitLastState == LOW) {
+      break;
+    }
+    delay(200);
+  }
+  
+  
 }
 
 int decodeToolBits() {

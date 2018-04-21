@@ -37,6 +37,20 @@ void loop() {
   
 }
 
+int decodeToolBits() {
+  bool bitStates[] = {digitalRead(pinBit_1), digitalRead(pinBit_2), digitalRead(pinBit_3), digitalRead(pinBit_4)};
+  int bitValues[] = {1, 2, 4, 8};
+  int toolNum = 0;
+  for (int i = 0; i < 4; i++) {
+    toolNum += bitStates[i] * bitValues[i];
+  }
+  return toolNum;
+}
+
+int getPinVal(int pin) {
+  return digitalRead(pin);
+}
+
 void toggleInterrupts() {
   // Attaching or dettaching interrupts on the step and dir pin from Mach 4
   if (interruptsAttached) {

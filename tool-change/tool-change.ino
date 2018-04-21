@@ -1,7 +1,7 @@
 /*
  * This code was written by The Great Mr. Fly
  */
-
+ 
 // Input from Mach 4
 #define pinStepMach   2
 #define pinDirMach    3

@@ -20,6 +20,8 @@
 #define stepOnTime      1
 
 bool interruptsAttached = false;
+int sequenceCounter = 0;
+
 void setup() {
   // Setting pinmode.
   pinMode(pinStepMach, INPUT);

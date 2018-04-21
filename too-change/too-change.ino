@@ -9,9 +9,10 @@
 #define pinBit_2    7
 #define pinBit_3    8
 #define pinBit_4    9
+#define pinWaiting  12
 
 // Output to Mach 4
-
+#define pinReady    13
 
 // Spindle
 #define pinStepSpindle  4
@@ -31,6 +32,9 @@ void setup() {
   pinMode(pinBit_2, INPUT);
   pinMode(pinBit_3, INPUT);
   pinMode(pinBit_4, INPUT);
+
+  pinMode(pinWaiting, INPUT);
+  pinMode(pinReady, OUTPUT);
 
   // Starting serial connection.
   Serial.begin(9600);

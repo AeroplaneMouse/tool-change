@@ -3,16 +3,16 @@
  */
 
 // Input from Mach 4
-#define pinStepMach 2
-#define pinDirMach  3
-#define pinBit_1    6
-#define pinBit_2    7
-#define pinBit_3    8
-#define pinBit_4    9
-#define pinWaiting  12
+#define pinStepMach   2
+#define pinDirMach    3
+#define pinBit_1      6
+#define pinBit_2      7
+#define pinBit_3      8
+#define pinBit_4      9
+#define pinMachWait  12
 
 // Output to Mach 4
-#define pinReady    13
+#define pinArduWait  13
 
 // Spindle
 #define pinStepSpindle  4
@@ -21,6 +21,7 @@
 
 bool interruptsAttached = false;
 int sequenceCounter = 0;
+int pinMachWaitLastState = 0;
 
 void setup() {
   // Setting pinmode.
@@ -35,8 +36,8 @@ void setup() {
   pinMode(pinBit_3, INPUT);
   pinMode(pinBit_4, INPUT);
 
-  pinMode(pinWaiting, INPUT);
-  pinMode(pinReady, OUTPUT);
+  pinMode(pinMachWait, INPUT);
+  pinMode(pinArduWait, OUTPUT);
 
   // Starting serial connection.
   Serial.begin(9600);

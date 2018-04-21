@@ -25,6 +25,10 @@ void setup() {
   pinMode(pinDirMach, INPUT);
   pinMode(pinStepSpindle, OUTPUT);
   pinMode(pinDirSpindle, OUTPUT);
+  pinMode(pinBit_1, INPUT_PULLUP);
+  pinMode(pinBit_2, INPUT_PULLUP);
+  pinMode(pinBit_3, INPUT_PULLUP);
+  pinMode(pinBit_4, INPUT_PULLUP);
 
   // Starting serial connection.
   Serial.begin(9600);

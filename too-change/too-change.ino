@@ -5,6 +5,10 @@
 // Input from Mach 4
 #define pinStepMach 2
 #define pinDirMach  3
+#define pinBit_1    6
+#define pinBit_2    7
+#define pinBit_3    8
+#define pinBit_4    9
 
 // Output to Mach 4
 

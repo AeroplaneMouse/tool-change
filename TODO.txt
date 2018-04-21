@@ -2,3 +2,4 @@ TODO liste
 
 
 * Måle spindelens strømforbrug, for at afgøre om den har påkørt noget under værktøjsskifte. Hvorved arduinoen afbryder operationen.
+

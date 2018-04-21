@@ -23,12 +23,14 @@ void setup() {
   // Setting pinmode.
   pinMode(pinStepMach, INPUT);
   pinMode(pinDirMach, INPUT);
+  
   pinMode(pinStepSpindle, OUTPUT);
   pinMode(pinDirSpindle, OUTPUT);
-  pinMode(pinBit_1, INPUT_PULLUP);
-  pinMode(pinBit_2, INPUT_PULLUP);
-  pinMode(pinBit_3, INPUT_PULLUP);
-  pinMode(pinBit_4, INPUT_PULLUP);
+
+  pinMode(pinBit_1, INPUT);
+  pinMode(pinBit_2, INPUT);
+  pinMode(pinBit_3, INPUT);
+  pinMode(pinBit_4, INPUT);
 
   // Starting serial connection.
   Serial.begin(9600);

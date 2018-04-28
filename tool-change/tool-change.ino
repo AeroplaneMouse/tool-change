@@ -129,9 +129,14 @@ void loop() {
     switch (sequenceCounter) {
       case 0:
         // Loading selected tool number.
-        //selectedTool = decodeToolBits();
-//        Serial.print("Selected tool: ");
-//        Serial.println(selectedTool);
+        selectedTool = decodeToolBits();
+        Serial.print("Selected tool: ");
+        Serial.println(selectedTool);
+        if (selectedTool == 0) {
+          currentTool = 0;
+          sequenceCounter = -1;
+          break;
+        }
         delay(100);
         homeSpindle();
         spindleStep(ALIGNMENT_OFFSET);
@@ -175,6 +180,8 @@ void loop() {
         else digitalWrite(pinDirSpindle, HIGH);
         
         // Moving to selected tool
+        Serial.print("Moving to tool ");
+        Serial.println(selectedTool);
         spindleStep(dist[i] * REVS_TOOL * STEPS_REV);
 
         if (selectedTool == 1 && digitalRead(pinToolOne) != LOW) {
@@ -182,6 +189,7 @@ void loop() {
           currentTool = 0;
           return;
         }
+        else currentTool = selectedTool;
         
         digitalWrite(pinDirSpindle, dir);
         //digitalWrite(pinAirBlast, HIGH);
@@ -217,8 +225,8 @@ int decodeToolBits() {
   for (int i = 0; i < 4; i++) {
     toolNum += bitStates[i] * bitValues[i];
   }
-  //return toolNum;
-  return 2;
+  return toolNum;
+  //return 2;
 }
 
 void spindleStep(int steps) {
